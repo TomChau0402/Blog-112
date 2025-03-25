@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 
-{% block title %} Detail Post {% endblock title %}
+{% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-<h1>Detail Post</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-primary" value="Create">
-</form>
+<h1>{{ post.title }}</h1>
+<h3>{{ post.subtitle }}</h3>
+<small> Created on: {{ post.created_on }}</small>
+<p>{{ post.body}}</p>
 
 {% endblock content %}
